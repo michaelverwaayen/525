@@ -1,0 +1,9 @@
+package cpsc525;
+
+public class cpscSim {
+	public static void main(String[] args) {
+		View theView = new View();
+		theView.setLocationRelativeTo(null);
+		theView.setVisible(true);
+	}
+}
