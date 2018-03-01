@@ -1,0 +1,218 @@
+package cpsc525;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.TextField;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+
+
+public class View extends JFrame{
+	static final int MIN=0;
+	static final int MAX=5;
+	public static final int FPS_INIT=0;
+	public static final int WIDTH=1500;
+	public static final int HEIGHT=350;
+	private JPanel panel,panel2,panel3,panel4,panel5,panel6;
+	private static JTextField textbox,textbox2,textbox3,textbox4,textbox5,textbox6,textbox7,textbox8,textbox9,textbox10,textbox11,textbox12,textbox13,textbox14,textbox15,textbox16,textbox17,textbox18,textbox19,textbox20,userName,passcode,cPasscode;
+	private JLabel label1,label2,label3,label4,label5,label6,label7,label8,label9,label10,label11,label12,label13,label14,userACC,label15,usrName,password,cnfPassword;
+	public View()
+	{
+		JFrame frame = new JFrame("525");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(WIDTH, HEIGHT);
+		setLayout(new BorderLayout());
+		JTabbedPane tabpane = new JTabbedPane();
+		
+		
+
+		panel=new JPanel();
+		panel2= new JPanel();
+		panel.setLayout(new GridLayout(11, 3));
+		panel2.setLayout(new GridLayout(5, 2));
+////////////////LEFT SIDE PANEL ///////////////////////////////
+		//basic information questions 
+	
+		userACC =      new JLabel ("IF YOU ALREADY HAVE AN ACCOUNT GO TO THE NEXT PANEL");
+		usrName =      new JLabel("CREATE YOUR USER NAME");
+		password =     new JLabel ("CREATE YOUR PASSWORD");
+		cnfPassword = new JLabel( "CONFIRM YOUR PASSWORD ");
+		label1 =       new JLabel ("NAME");
+		label2 =       new JLabel ("Title");
+		label3 =       new JLabel ("Date of Birth");
+		label4 =       new JLabel ("Email");
+		label5 =       new JLabel ("Company");
+		label6 =       new JLabel ("Country of Origin");
+		
+		//User entry 
+		userName  = new JTextField(100);
+		passcode  = new JTextField(100);
+		cPasscode = new JTextField(100);
+		textbox   = new JTextField (100);
+		textbox2  = new JTextField (100);
+		textbox3  = new JTextField (100);
+		textbox4  = new JTextField (100);
+		textbox5  = new JTextField (100);
+		textbox6  = new JTextField (100);
+		
+		//put it onto the panel 
+		panel.add(userACC);
+		panel.add(usrName);
+		panel.add(userName);
+		panel.add(password);
+		panel.add(passcode);
+		panel.add(cnfPassword);
+		panel.add(cPasscode);
+		panel.add(label1);
+		panel.add(textbox);
+		panel.add(label2);
+		panel.add(textbox2);
+		panel.add(label3);
+		panel.add(textbox3);
+		panel.add(label4);
+		panel.add(textbox4);
+		panel.add(label5);
+		panel.add(textbox5);
+		panel.add(label6);
+		panel.add(textbox6);
+//////////////////////////////END LEFT SIDE PANEL////////////////////////		
+		
+		//security questions
+		label7  = new JLabel ("PLEASE SELECT 5 OF THE FOLLOWING QUESTIONS");
+		label8  = new JLabel ("What is your favourite TV Show");
+		label9  = new JLabel ("What is your favourite Video Game");
+		label10 = new JLabel ("Who is your biggest Hero");
+		label11 = new JLabel ("What is your hometown");
+		label12 = new JLabel ("Favourite first date spot");
+		
+		textbox8  = new JTextField (100);
+		textbox9  = new JTextField (100);
+		textbox10 = new JTextField (100);
+		textbox11 = new JTextField (100);
+		textbox12 = new JTextField (100);
+
+		
+		panel.add(label7);
+		panel.add(label8);
+		panel.add(textbox8);
+		panel.add(label9);
+		panel.add(textbox9);
+		panel.add(label10);
+		panel.add(textbox10);
+		panel.add(label11);
+		panel.add(textbox11);
+		panel.add(label12);
+		panel.add(textbox12);
+		
+		tabpane.addTab ("New Account", panel);
+//////////////////////END OF FIRST TAB INCLUDING SECURITY QUESTIONS
+
+/////////////////////LOGIN PAGE//////////////////////////////////////
+		
+		label13 = new JLabel ("User Name:");
+		label14 = new JLabel ("PassWord:");
+		label15 = new JLabel ("Please answer the following questions");
+		
+		
+		textbox13 = new JTextField (100);
+		textbox14 = new JTextField (100);
+		textbox15 = new JTextField (100);
+		
+		textbox16 = new JTextField (100);
+		textbox17 = new JTextField (100);
+		textbox18 = new JTextField (100);
+		textbox19 = new JTextField (100);
+		textbox20 = new JTextField (100);
+	
+		//Standard Log in 
+		panel2.add(label13);
+		panel2.add(textbox13);
+		panel2.add(label14);
+		panel2.add(textbox14);
+		panel2.add(label15);
+		
+		//Security questions 
+		// JLAbel myText = new JLabel("Question: which bear is better : + blackbear,SwingConstants.CENTER);
+		panel2.add(textbox16);
+		panel2.add(textbox17);
+		panel2.add(textbox18);
+		panel2.add(textbox19);
+		panel2.add(textbox20);
+	
+		tabpane.addTab("LOG IN", panel2);
+		
+		frame.add(tabpane);
+		frame.pack();
+		frame.setVisible(true);
+	}
+	
+//get all the information the user entered and make them a new account from in 
+	
+	protected String UserNametoString()
+	{
+		return(userName.getText());
+	}
+	protected String PasswordtoString()
+	{
+		return(passcode.getText());
+	}
+	protected String ConfirmthePassword()
+	{
+		return(cPasscode.getText());
+	}
+	
+	
+	
+	protected String Name()
+	{
+		return(textbox.getText());
+	}
+	protected String Title()
+	{
+		return(textbox2.getText());
+	}
+	protected String DateOfBirth()
+	{
+		return(textbox3.getText());
+	}
+	protected String Email()
+	{
+		return(textbox4.getText());
+	}
+	protected String Company()
+	{
+		return(textbox5.getText());
+	}
+	protected String CountryOfOrigin()
+	{
+		return(textbox6.getText());
+	}
+//Selected Security questions.......
+	protected String QuestionOne()
+	{
+		return(textbox8.getText());
+	}
+	
+	protected String QuestionTwo()
+	{
+		return(textbox9.getText());
+	}
+	protected String QuestionThree()
+	{
+		return(textbox10.getText());
+	}
+	protected String QuestionFour()
+	{
+		return(textbox11.getText());
+	}
+	protected String QuestionFive()
+	{
+		return(textbox12.getText());
+	}
+}
